@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prevent Screen Timeout</title>
+</head>
+<body>
+    <script>
+        function preventSleep() {
+            // Simulate a key press every minute to prevent screen timeout
+            setInterval(() => {
+                const event = new KeyboardEvent('keydown', { key: 'Shift' });
+                document.dispatchEvent(event);
+            }, 60000); // 60000 ms = 1 minute
+        }
+
+        // Start preventing sleep when the page loads
+        window.onload = preventSleep;
+    </script>
+    <h1>Screen Timeout Prevention</h1>
+    <p>This page will keep your screen from timing out.</p>
+</body>
+</html>
